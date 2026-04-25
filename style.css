@@ -1,4 +1,4 @@
-/* 1. Global Reset */
+/* --- 1. Global Reset --- */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,6 @@ body {
     overflow-x: hidden;
 }
 
-/* 2. Common Components */
 section {
     padding: 60px 10%;
 }
@@ -21,11 +20,10 @@ section {
 .btn {
     background-color: #4CAF4F;
     color: #fff;
-    padding: 12px 25px;
+    padding: 10px 22px;
     border: none;
     cursor: pointer;
     border-radius: 4px;
-    font-size: 15px;
     text-decoration: none;
     display: inline-block;
     transition: 0.3s ease;
@@ -35,7 +33,7 @@ section {
     background-color: #3d8b3f;
 }
 
-/* 3. Navbar (Fixed Hamburger Issue) */
+/* --- 2. Navbar Styling --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -43,6 +41,9 @@ section {
     padding: 20px 10%;
     background-color: #fff;
     border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
@@ -60,61 +61,48 @@ section {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: #4D4D4D;
     font-weight: 500;
-    transition: 0.3s;
 }
 
-.nav-links li a:hover {
-    color: #4CAF4F;
+/* Bari screen par Hamburger aur Checkbox hide rahenge */
+#check, .menu-toggle {
+    display: none;
 }
 
-/* Yahan Hamburger ko Desktop par Hide kiya hai */
-.menu-toggle {
-    display: none; 
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* 4. Hero Section */
+/* --- 3. Hero Section --- */
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #F5F7FA;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .hero-text {
     flex: 1;
-    max-width: 600px;
+    min-width: 300px;
 }
 
 .hero-text h1 {
     font-size: 48px;
     margin-bottom: 15px;
-    color: #4D4D4D;
 }
 
 .hero-text h1 span {
     color: #4CAF4F;
-    display: block;
-}
-
-.hero-text p {
-    margin-bottom: 25px;
-    color: #717171;
 }
 
 .hero-image {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .hero-image img {
@@ -122,27 +110,185 @@ section {
     max-width: 400px;
 }
 
-/* 5. Clients Section */
+/* --- 4. Clients & Features --- */
 .clients {
     text-align: center;
 }
 
-.client-logos {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-}
-
 .client-logos img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* 6. Features Section */
-.features {
-    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
 }
 
 .feature-cards {
     display: flex;
-    justify
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    flex: 1;
+}
+
+.card img {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+/* --- 5. Image + Text Section --- */
+.image-text {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.image-left img {
+    width: 100%;
+    max-width: 450px;
+}
+
+.text-right h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* --- 6. Stats Section --- */
+.starts {
+    background-color: #F5F7FA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.starts ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.starts li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.starts li img {
+    width: 40px;
+}
+
+/* --- 7. Footer --- */
+.footer {
+    background-color: #263238;
+    color: #fff;
+    padding: 60px 10%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px;
+}
+
+.footer-links ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #95a5a6;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-newsletter form {
+    display: flex;
+    background: rgba(255,255,255,0.1);
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.footer-newsletter input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 8px;
+    outline: none;
+    width: 100%;
+}
+
+.footer-newsletter button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+/* --- 8. Responsive (Mobile View) --- */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mobile par Hamburger icon dikhega */
+    }
+
+    .nav-links {
+        display: none; /* Default par menu hide rahega */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        text-align: center;
+        z-index: 999;
+    }
+
+    .nav-btn {
+        display: none; /* Mobile par nav button hide */
+    }
+
+    /* Magic Line: Jab checkbox check ho toh menu dikhao */
+    #check:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* Sections stacking */
+    .hero, .image-text, .starts, .footer-container, .feature-cards {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .starts ul {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
